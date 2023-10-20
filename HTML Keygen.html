@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Keygen</title>
+</head>
+    <body>
+        <form>
+            Username: <input type="text" name="user">
+            Encryption: <keygen name="security">
+            <input type="submit">
+            
+            <!--
+            Provide a secure way to authenticate users
+            Specifies a Key-Pair generator field in a form.
+            when form is submitted, 2 keys are generated (public and private). The private key is stored locally and publickey is sent to server.
+            The public key could be used to generate a client certificate to auntheticate the user in the future
+            -->
+        </form>
+    </body>
+</html>

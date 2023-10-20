@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is a WebPage">
+    <title>HTML Links, Download, File, Anchor, Email</title>
+</head>
+<body>
+    <!--This is the link on how to get in a website-->
+    <a href="https://www.google.com">Google</a>
+    <br>
+    <!--Link the Webpage to another Tab-->
+    <a href="https://www.google.com" target="_blank">Google in a new Tab</a>
+    <br>
+    <!--Linking to Another File-->
+    <a href="HTML%20Structure.html">HTML Structure</a>
+    <br>
+    <!--Linking as Download-->
+    <a href="jrwifipassword.png" download>Download File</a>
+    <br>
+    <!--Linking To Picture-->
+    <a href="jrwifipassword.png">Photo</a>
+    <br>
+    <!-- Link to send email-->
+    <a href="mailto:jeshuabay@gmail.com">Email Jeshua Mark Bay</a><br>
+    <!--Image Link-->
+    <a href="HTML%20Basic%20Table.html"><img src="jrwifipassword.png" width="50%"></a>
+    <!--Linking to Another Part--><br>
+    <!--Links to this Page Anchor are name=last name-->
+    <a href="#preface">Preface</a><br>
+    <a href="#last page">Last Page</a>
+    <br><br>
+    <p><a name="preface">Preface<br></a>
+The Oracle VM VirtualBox User Manual provides an introduction to using Oracle VM VirtualBox.
+The manual provides information on how to install Oracle VM VirtualBox and use it to create
+and configure virtual machines.
+Audience
+This document is intended for both new and existing users of Oracle VM VirtualBox. It is assumed
+that readers are familiar with Web technologies and have a general understanding of Windows
+and UNIX platforms.
+Related Documents
+The documentation for this product is available at:
+https://www.oracle.com/technetwork/server-storage/virtualbox/documentation/
+index.html
+Conventions
+The following text conventions are used in this document:
+ boldface: Boldface type indicates graphical user interface elements associated with an
+action, or terms defined in text or the glossary.
+ italic: Italic type indicates book titles, emphasis, or placeholder variables for which you
+supply particular values.
+ monospace: Monospace type indicates commands within a paragraph, URLs, code in examples,
+text that appears on the screen, or text that you enter.
+Documentation Accessibility
+For information about Oracle’s commitment to accessibility, visit the Oracle Accessibility Program
+website at
+http://www.oracle.com/pls/topic/lookup?ctx=acc&id=docacc.
+Access to Oracle Support
+Oracle customers that have purchased support have access to electronic support through My
+Oracle Support. For information, visit
+http://www.oracle.com/pls/topic/lookup?ctx=acc&id=info or visit http://www.
+oracle.com/pls/topic/lookup?ctx=acc&id=trs if you are hearing impaired.
+i
+1 First Steps
+Welcome to Oracle VM VirtualBox.
+Oracle VM VirtualBox is a cross-platform virtualization application. What does that mean? For
+one thing, it installs on your existing Intel or AMD-based computers, whether they are running
+Windows, Mac OS X, Linux, or Oracle Solaris operating systems (OSes). Secondly, it extends the
+capabilities of your existing computer so that it can run multiple OSes, inside multiple virtual
+machines, at the same time. As an example, you can run Windows and Linux on your Mac,
+run Windows Server 2016 on your Linux server, run Linux on your Windows PC, and so on, all
+alongside your existing applications. You can install and run as many virtual machines as you
+like. The only practical limits are disk space and memory.
+Oracle VM VirtualBox is deceptively simple yet also very powerful. It can run everywhere from
+small embedded systems or desktop class machines all the way up to datacenter deployments
+and even Cloud environments.
+The following screenshot shows how Oracle VM VirtualBox, installed on an Apple Mac OS X
+computer, is running Windows Server 2016 in a virtual machine window.
+In this User Manual, we will begin simply with a quick introduction to virtualization and how
+to get your first virtual machine running with the easy-to-use Oracle VM VirtualBox graphical
+user interface. Subsequent chapters will go into much more detail covering more powerful tools
+and features, but fortunately, it is not necessary to read the entire User Manual before you can
+use Oracle VM VirtualBox.
+You can find a summary of Oracle VM VirtualBox’s capabilities in chapter 1.3, Features
+Overview, page 3. For existing Oracle VM VirtualBox users who just want to find out what is
+new in this release, see the chapter 15, Change Log, page 305.
+1
+1 First Steps
+1.1 Why is Virtualization Useful?
+The techniques and features that Oracle VM VirtualBox provides are useful in the following
+scenarios:
+ Running multiple operating systems simultaneously. Oracle VM VirtualBox enables you
+to run more than one OS at a time. This way, you can run software written for one OS on
+another, such as Windows software on Linux or a Mac, without having to reboot to use it.
+Since you can configure what kinds of virtual hardware should be presented to each such
+OS, you can install an old OS such as DOS or OS/2 even if your real computer’s hardware
+is no longer supported by that OS.
+ Easier software installations. Software vendors can use virtual machines to ship entire
+software configurations. For example, installing a complete mail server solution on a real
+machine can be a tedious task. With Oracle VM VirtualBox, such a complex setup, often
+called an appliance, can be packed into a virtual machine. Installing and running a mail
+server becomes as easy as importing such an appliance into Oracle VM VirtualBox.
+ Testing and disaster recovery. Once installed, a virtual machine and its virtual hard disks
+can be considered a container that can be arbitrarily frozen, woken up, copied, backed up,
+and transported between hosts.
+On top of that, with the use of another Oracle VM VirtualBox feature called snapshots, one
+can save a particular state of a virtual machine and revert back to that state, if necessary.
+This way, one can freely experiment with a computing environment. If something goes
+wrong, such as prolems after installing software or infecting the guest with a virus, you
+can easily switch back to a previous snapshot and avoid the need of frequent backups and
+restores.
+Any number of snapshots can be created, allowing you to travel back and forward in virtual
+machine time. You can delete snapshots while a VM is running to reclaim disk space.
+ Infrastructure consolidation. Virtualization can significantly reduce hardware and electricity
+costs. Most of the time, computers today only use a fraction of their potential power
+and run with low average system loads. A lot of hardware resources as well as electricity
+is thereby wasted. So, instead of running many such physical computers that are only partially
+used, one can pack many virtual machines onto a few powerful hosts and balance the
+loads between them.
+1.2 Some Terminology
+When dealing with virtualization, and also for understanding the following chapters of this documentation,
+it helps to acquaint oneself with a bit of crucial terminology, especially the following
+terms:
+ Host operating system (host OS). This is the OS of the physical computer on which Oracle
+VM VirtualBox was installed. There are versions of Oracle VM VirtualBox for Windows,
+Mac OS X, Linux, and Oracle Solaris hosts. See chapter 1.4, Supported Host Operating
+Systems, page 5.
+Most of the time, this manual discusses all Oracle VM VirtualBox versions together. There
+may be platform-specific differences which we will point out where appropriate.
+ Guest operating system (guest OS). This is the OS that is running inside the virtual machine.
+Theoretically, Oracle VM VirtualBox can run any x86 OS. such as DOS, Windows, OS/2,
+FreeBSD, and OpenBSD. But to achieve near-native performance of the guest code on your
+machine, we had to go through a lot of optimizations that are specific to certain OSes. So
+2
+1 First Steps
+while your favorite OS may run as a guest, we officially support and optimize for a select
+few, which include the most common OSes.
+See chapter 3.1, Supported Guest Operating Systems, page 40.
+ Virtual machine (VM). This is the special environment that Oracle VM VirtualBox creates
+for your guest OS while it is running. In other words, you run your guest OS in a VM.
+Normally, a VM will be shown as a window on your computer’s desktop, but depending on
+which of the various frontends of Oracle VM VirtualBox you use, it can be displayed in full
+screen mode or remotely on another computer.
+In a more abstract way, internally, Oracle VM VirtualBox thinks of a VM as a set of parameters
+that determine its behavior. They include hardware settings, such as: how much memory
+the VM should have, what hard disks Oracle VM VirtualBox should virtualize through
+which container files, what CDs are mounted. They also include state information, such as:
+whether the VM is currently running, saved, if the VM has snapshots. These settings are
+mirrored in the VirtualBox Manager window, as well as the VBoxManage command. See
+chapter 8, VBoxManage, page 120. In other words, a VM is also what you can see in its
+Settings dialog.
+ Guest Additions. This refers to special software packages which are shipped with Oracle VM
+VirtualBox but designed to be installed inside a VM to improve performance of the guest
+OS and to add extra features. See chapter 4, Guest Additions, page 62.
+1.3 Features Overview
+The following is a brief outline of Oracle VM VirtualBox’s main features:
+ Portability. Oracle VM VirtualBox runs on a large number of 32-bit and 64-bit host OS.
+See chapter 1.4, Supported Host Operating Systems, page 5.
+Oracle VM VirtualBox is a so-called hosted hypervisor, sometimes referred to as a type 2
+hypervisor. Whereas a bare-metal or type 1 hypervisor would run directly on the hardware,
+Oracle VM VirtualBox requires an existing OS to be installed. It can thus run alongside
+existing applications on that host.
+To a very large degree, Oracle VM VirtualBox is functionally identical on all of the host
+platforms, and the same file and image formats are used. This enables you to run virtual
+machines created on one host on another host with a different host OS. For example, you
+can create a virtual machine on Windows and then run it under Linux.
+In addition, virtual machines can easily be imported and exported using the Open Virtualization
+Format (OVF), an industry standard created for this purpose. You can even
+import OVFs that were created with a different virtualization software. See chapter 1.15,
+Importing and Exporting Virtual Machines, page 21.
+ No hardware virtualization required. For many scenarios, Oracle VM VirtualBox does
+not require the processor features built into newer hardware like Intel VT-x or AMD-V. As
+opposed to many other virtualization solutions, you can therefore use Oracle VM VirtualBox
+even on older hardware where these features are not present. See chapter 10.3, Hardware
+vs. Software Virtualization, page 270.
+ Guest Additions: shared folders, seamless windows, 3D virtualization. The Oracle
+VM VirtualBox Guest Additions are software packages which can be installed inside of supported
+guest systems to improve their performance and to provide additional integration
+and communication with the host system. After installing the Guest Additions, a virtual
+machine will support automatic adjustment of video resolutions, seamless windows, accelerated
+3D graphics and more. See chapter 4, Guest Additions, <a name="last page">page 62.</a></p><br>
+    <!--Links to this Page Anchor are name=last name-->
+    <a href="#preface">Preface</a><br>
+    <a href="#last page">Last Page</a>
+</body>
+</html>
